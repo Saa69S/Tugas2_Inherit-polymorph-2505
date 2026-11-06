@@ -183,7 +183,7 @@ B dibuat, nilai=5
 
 **2. Jika komentar pada `h.panjat();` dihapus.**
 - Prediksi: error saat kompilasi.
-- Hasil sebenarnya
+- **Hasil sebenarnya**
 ![](OutputSoal/OutputErrorSoal2.png)
 - Penjelasan: error terjadi pada tahap **kompilasi**, bukan runtime. Compiler hanya melihat tipe statis variabel `h`, yaitu `Hewan`, dan kelas `Hewan` tidak punya method `panjat()`. Compiler tidak memeriksa objek aslinya.
 
