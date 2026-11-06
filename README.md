@@ -181,10 +181,14 @@ B dibuat, nilai=5
   ```
 - Penjelasan: pada `new Kucing("Tom")`, constructor `Kucing` memanggil `super(nama)` lebih dulu, sehingga "Hewan dibuat" tercetak sebelum "Kucing dibuat". Di dalam `makan()`, `suara()` yang jalan adalah versi `Kucing`, jadi tercetak "meong". Cast `(Kucing) h` berhasil karena objek aslinya memang Kucing. Pada `Hewan("Generik")`, cast ke `Kucing` gagal sehingga program berhenti dan `k2.panjat()` tidak pernah dijalankan.
 
-**2. Jika komentar pada `h.panjat();` dihapus.**
-- Prediksi: error saat kompilasi.
-- **Hasil sebenarnya**
+### 2. Jika komentar pada `h.panjat();` dihapus
+
+* **Prediksi:** Error saat kompilasi.
+* **Hasil Sebenarnya:**
+
 ![](OutputSoal/OutputErrorSoal2.png)
+
+
 - Penjelasan: error terjadi pada tahap **kompilasi**, bukan runtime. Compiler hanya melihat tipe statis variabel `h`, yaitu `Hewan`, dan kelas `Hewan` tidak punya method `panjat()`. Compiler tidak memeriksa objek aslinya.
 
 **3. Baris penyebab `ClassCastException` dan perbaikannya.**
