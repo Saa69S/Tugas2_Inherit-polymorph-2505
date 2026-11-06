@@ -120,7 +120,7 @@ MSI | garansi 18 bulan | RAM 32 GB | layar 15.6 inci | GPU RTX 4060
 Pajak laptop: Rp800000
 Promo laptop 10 persen: Rp7200000
 ```
-- Output Program
+#### Output Program
 ![Output Soal 1](OutputSoal/OutputSoal1.png)
 
 - **Pertanyaan Tambahan**
@@ -139,7 +139,7 @@ src\soal1\Laptop.java:39: error: harga has private access in Perangkat
 
 
 ### Soal 2
-- Output Diharapkan
+#### Output Diharapkan
 ```
 === Bagian A ===
 Hewan dibuat: Tom
@@ -161,11 +161,10 @@ B dibuat, nilai=5
 0.0
 0.0
 ```
-- Output Program
+#### Output Program
 ![Output Soal 2](OutputSoal/OutputBaruSoal2.png)
 
 **Bagian A**
-
 **1. Output lengkap sampai program berhenti.**
 - Prediksi: seluruh output berurutan seperti di bawah, lalu berhenti dengan `ClassCastException`.
 - Hasil sebenarnya (versi awal sebelum perbaikan):
@@ -206,7 +205,6 @@ B dibuat, nilai=5
 - Penjelasan: tipe statis `h` adalah `Hewan` (tipe yang tertulis di kiri), sedangkan tipe dinamisnya `Kucing` (objek yang dibuat dengan `new`). Tipe statis dipakai compiler untuk memeriksa method apa yang boleh dipanggil. Tipe dinamis dipakai saat program berjalan untuk memilih versi method yang dieksekusi (dynamic dispatch). Karena `Kucing` meng-override `suara()`, versi `Kucing` yang berjalan walaupun `makan()` ditulis di `Hewan`.
 
 **Bagian B**
-
 **5. Output `new B();`.**
 - Prediksi dan hasil sebenarnya:
   ```
@@ -218,7 +216,6 @@ B dibuat, nilai=5
 - Risiko memanggil method yang bisa di-override dari constructor: method milik subclass bisa berjalan ketika objek subclass belum selesai dibuat, sehingga atributnya masih berisi nilai bawaan (0, `null`, atau `false`). Hasilnya bisa salah atau menimbulkan `NullPointerException`, dan bug-nya sulit dilacak. Cara menghindarinya: jangan panggil method yang bisa di-override dari constructor, atau jadikan method itu `private` atau `final`.
 
 **Bagian C**
-
 **6. Mengapa `l3.luas()` menghasilkan 0.0.**
 - Hasil: `78.53981633974483`, `0.0`, `0.0`.
 - Alasan: tipe statis `l3` adalah `Lingkaran`, tetapi objeknya dibuat dengan `new Titik()`, sehingga tipe dinamisnya `Titik`. Saat program berjalan, Java memilih `luas()` milik `Titik` (dynamic dispatch), dan versi itu selalu mengembalikan 0.0.
@@ -227,12 +224,12 @@ B dibuat, nilai=5
 
 
 ### Soal 3
-- Output yang diharapkan
+#### Output yang diharapkan
 ```
 (0.0, 0.0) - (3.0, 4.0) panjang=5.0
 (1.0, 1.0) - (5.0, 5.0)
 ```
-- Output Program
+#### Output Program
 ![Output Soal 3 dengan defensive copy](OutputSoal/OutputAkhirSoal3.png)
 
 **1. Apa yang tercetak pada baris kedua dan mengapa.**
@@ -257,7 +254,7 @@ B dibuat, nilai=5
 
 
 ### Soal 4
-- Output yang diharapkan
+#### Output yang diharapkan
 ```
 F01 | Keyboard Mekanik | fisik 1.5 kg | Rp515000
 D01 | Ebook Java | digital 20.0 MB | Rp90000
@@ -266,7 +263,7 @@ TOTAL: Rp2045000
 Fisik: 1, Digital: 1, Langganan: 1
 Gagal: Kode produk sudah ada di keranjang: F01
 ```
-- Output Program
+#### Output Program
 ![Output Soal 4](OutputSoal/OutputSoal4.png)
 
 
