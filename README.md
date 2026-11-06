@@ -165,6 +165,7 @@ B dibuat, nilai=5
 ![Output Soal 2](OutputSoal/OutputBaruSoal2.png)
 
 **Bagian A**
+
 **1. Output lengkap sampai program berhenti.**
 - Prediksi: seluruh output berurutan seperti di bawah, lalu berhenti dengan `ClassCastException`.
 - Hasil sebenarnya (versi awal sebelum perbaikan):
@@ -182,7 +183,7 @@ B dibuat, nilai=5
 
 **2. Jika komentar pada `h.panjat();` dihapus.**
 - Prediksi: error saat kompilasi.
-- Hasil sebenarnya:
+- Hasil sebenarnya
 ![](OutputSoal/OutputErrorSoal2.png)
 - Penjelasan: error terjadi pada tahap **kompilasi**, bukan runtime. Compiler hanya melihat tipe statis variabel `h`, yaitu `Hewan`, dan kelas `Hewan` tidak punya method `panjat()`. Compiler tidak memeriksa objek aslinya.
 
