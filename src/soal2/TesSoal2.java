@@ -13,7 +13,7 @@ public class TesSoal2 {
         Hewan h = new Kucing("Tom");
         h.makan();
         h.suara();
-        // h.panjat();
+        //h.panjat();
         Kucing k = (Kucing) h;
         k.panjat();
 
