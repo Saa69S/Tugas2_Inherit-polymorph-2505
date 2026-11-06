@@ -162,9 +162,10 @@ B dibuat, nilai=5
 0.0
 ```
 - Output Program
-![Output Soal 2](OutputSoal/OutputSoal2.png)
+![Output Soal 2](OutputSoal/OutputBaruSoal2.png)
 
 **Bagian A**
+
 **1. Output lengkap sampai program berhenti.**
 - Prediksi: seluruh output berurutan seperti di bawah, lalu berhenti dengan `ClassCastException`.
 - Hasil sebenarnya (versi awal sebelum perbaikan):
@@ -205,6 +206,7 @@ B dibuat, nilai=5
 - Penjelasan: tipe statis `h` adalah `Hewan` (tipe yang tertulis di kiri), sedangkan tipe dinamisnya `Kucing` (objek yang dibuat dengan `new`). Tipe statis dipakai compiler untuk memeriksa method apa yang boleh dipanggil. Tipe dinamis dipakai saat program berjalan untuk memilih versi method yang dieksekusi (dynamic dispatch). Karena `Kucing` meng-override `suara()`, versi `Kucing` yang berjalan walaupun `makan()` ditulis di `Hewan`.
 
 **Bagian B**
+
 **5. Output `new B();`.**
 - Prediksi dan hasil sebenarnya:
   ```
@@ -216,6 +218,7 @@ B dibuat, nilai=5
 - Risiko memanggil method yang bisa di-override dari constructor: method milik subclass bisa berjalan ketika objek subclass belum selesai dibuat, sehingga atributnya masih berisi nilai bawaan (0, `null`, atau `false`). Hasilnya bisa salah atau menimbulkan `NullPointerException`, dan bug-nya sulit dilacak. Cara menghindarinya: jangan panggil method yang bisa di-override dari constructor, atau jadikan method itu `private` atau `final`.
 
 **Bagian C**
+
 **6. Mengapa `l3.luas()` menghasilkan 0.0.**
 - Hasil: `78.53981633974483`, `0.0`, `0.0`.
 - Alasan: tipe statis `l3` adalah `Lingkaran`, tetapi objeknya dibuat dengan `new Titik()`, sehingga tipe dinamisnya `Titik`. Saat program berjalan, Java memilih `luas()` milik `Titik` (dynamic dispatch), dan versi itu selalu mengembalikan 0.0.
@@ -230,7 +233,7 @@ B dibuat, nilai=5
 (1.0, 1.0) - (5.0, 5.0)
 ```
 - Output Program
-
+![Output Soal 3 dengan defensive copy](OutputSoal/OutputAkhirSoal3.png)
 
 **1. Apa yang tercetak pada baris kedua dan mengapa.**
 - Prediksi dan hasil sebelum perbaikan: `(100.0, 1.0) - (5.0, 5.0)`
