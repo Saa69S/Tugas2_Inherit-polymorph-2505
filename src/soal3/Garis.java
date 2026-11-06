@@ -10,12 +10,13 @@ public class Garis {
 
     /**
     Membuat garis dari dua titik yang sudah ada.
+    Kedua titik disalin (defensive copy) supaya perubahan pada objek di luar garis tidak memengaruhi isi garis.
     @param awal  titik awal garis
     @param akhir titik akhir garis
     */
     public Garis(Titik awal, Titik akhir) {
-        this.awal = awal;
-        this.akhir = akhir;
+        this.awal = salin(awal);
+        this.akhir = salin(akhir);
     }
 
     /**
@@ -30,35 +31,35 @@ public class Garis {
     }
 
     /**
-    Mengambil titik awal garis.
-    @return titik awal
+    Mengambil salinan titik awal garis.
+    @return salinan titik awal
     */
     public Titik getAwal() {
-        return awal;
+        return salin(awal);
     }
 
     /**
-    Mengubah titik awal garis.
+    Mengubah titik awal garis dengan menyimpan salinannya.
     @param awal titik awal yang baru
     */
     public void setAwal(Titik awal) {
-        this.awal = awal;
+        this.awal = salin(awal);
     }
 
     /**
-    Mengambil titik akhir garis.
-    @return titik akhir
+    Mengambil salinan titik akhir garis.
+    @return salinan titik akhir
     */
     public Titik getAkhir() {
-        return akhir;
+        return salin(akhir);
     }
 
     /**
-    Mengubah titik akhir garis.
+    Mengubah titik akhir garis dengan menyimpan salinannya.
     @param akhir titik akhir yang baru
     */
     public void setAkhir(Titik akhir) {
-        this.akhir = akhir;
+        this.akhir = salin(akhir);
     }
 
     /**
@@ -76,5 +77,14 @@ public class Garis {
     @Override
     public String toString() {
         return awal + " - " + akhir;
+    }
+
+    /**
+    Membuat salinan baru dari sebuah titik.
+    @param titik titik yang akan disalin
+    @return objek Titik baru dengan koordinat yang sama
+    */
+    private Titik salin(Titik titik) {
+        return new Titik(titik.getX(), titik.getY());
     }
 }
